@@ -18,7 +18,7 @@ public class EmployeeDAO {
     private final DepartmentService departmentService = DepartmentService.getInstance();
     private final String SELECT_ALL = "select * from employee;";
     private final String SELECT_BY_ID = "select * from employee where id = ?;";
-    private final String INSERT_INTO = "insert into employee(id,name,email,address,phone_number,salary,department_id) value (?,?,?,?,?,?,?);";
+    private final String INSERT_INTO = "insert into employee(name,email,address,phone_number,salary,department_id) value (?,?,?,?,?,?);";
     private final String UPDATE_BY_ID = "update employee set name = ?, email = ?,  address = ?,  phone_number = ?, salary = ?, department_id = ? where id = ?;";
     private final String DELETE_BY_ID = "delete from employee where id = ?;";
     private final String SEARCH_BY_NAME = "select * from employee where name like ?;";
@@ -100,7 +100,7 @@ public class EmployeeDAO {
             preparedStatement.setString(4, employee.getPhoneNumber());
             preparedStatement.setDouble(5, employee.getSalary());
             preparedStatement.setInt(6, employee.getDepartment().getId());
-            preparedStatement.setInt(5, employee.getId());
+            preparedStatement.setInt(7, employee.getId());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

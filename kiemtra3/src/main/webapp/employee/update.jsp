@@ -32,7 +32,7 @@
         <div class="mb-3">
             <label for="phone" class="form-label">Phone</label>
             <input type="text" class="form-control" id="phone" name="phone"
-                   placeholder="Enter gender" value="${employee.phone}">
+                   placeholder="Enter gender" value="${employee.phoneNumber}">
         </div>
         <div class="mb-3">
             <label for="salary" class="form-label">Salary</label>
@@ -45,13 +45,15 @@
                     aria-label="Default select example">
                 <option selected>--- Choice Department ---</option>
                 <c:forEach items="${department}" var="c">
-                    <option value="${c.id}">${c.name}</option>
+                    <option value="${c.id}" ${employee.getDepartment().getName() == c.name ? 'selected' : ''}>
+                    ${c.name}
+                    </option>
                 </c:forEach>
             </select>
         </div>
         <div class="mb-3">
             <button class="btn btn-primary" type="submit">Edit</button>
-            <a class="btn btn-secondary" href="/EmployServlet">Back to home</a>
+            <a class="btn btn-secondary" href="/employees">Back to home</a>
         </div>
     </form>
 </div>

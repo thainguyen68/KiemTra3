@@ -52,7 +52,7 @@
                 <td>${s.name}</td>
                 <td>${s.email}</td>
                 <td>${s.address}</td>
-                <td>${s.phone}</td>
+                <td>${s.phoneNumber}</td>
                 <td>${s.salary}</td>
                 <td>${s.department.name}</td>
                 <td>

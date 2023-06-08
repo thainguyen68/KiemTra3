@@ -106,7 +106,7 @@ public class EmployeeServlet extends HttpServlet {
 
     private void search(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("employee", employeeService.searchByName(request));
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/product/home.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/employee/home.jsp");
         requestDispatcher.forward(request, response);
     }
 }
